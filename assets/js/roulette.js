@@ -120,7 +120,8 @@
 
 				var tmp = p.$images.eq(0);
 				p.imageHeight = tmp.height();
-				$roulette.css({ 'height' : (p.imageHeight + 'px') });
+				//$roulette.css({ 'height' : (p.imageHeight + 'px') });
+				$roulette.css({ 'height' : ('100px') });
 				p.totalHeight = p.imageCount * p.imageHeight;
 				p.runUpDistance = 2 * p.imageHeight;
 
