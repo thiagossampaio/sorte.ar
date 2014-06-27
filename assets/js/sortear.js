@@ -72,7 +72,7 @@ jQuery(document).ready(function(){
 
 function gerarRoullet(){
     option = {
-	speed : 2,
+	speed : 5,
 	duration : 5,
 	stopImageNumber : sorteado,
 	startCallback : function(){
