@@ -97,12 +97,12 @@
 				p.$rouletteTarget.css('top', '-' + p.topPosition + 'px');
 			} else {
 				// TODO more smooth roll
-				p.$rouletteTarget.css('-webkit-transform: ', 'translate(0px, -' + p.topPosition + 'px)');
-				p.$rouletteTarget.css('-moz-transform: ', 'translate(0px, -' + p.topPosition + 'px)');
-				p.$rouletteTarget.css('-o-transform: ', 'translate(0px, -' + p.topPosition + 'px)');
-				p.$rouletteTarget.css('-ms-transform: ', 'translate(0px, -' + p.topPosition + 'px)');
-				p.$rouletteTarget.css('-sand-transform: ', 'translate(0px, -' + p.topPosition + 'px)');
-				p.$rouletteTarget.css('-webkit-transform: ', 'translate(0px, -' + p.topPosition + 'px)');
+				p.$rouletteTarget.css('-webkit-transform', 'translate(0px, -' + p.topPosition + 'px)');
+				p.$rouletteTarget.css('-moz-transform', 'translate(0px, -' + p.topPosition + 'px)');
+				p.$rouletteTarget.css('-o-transform', 'translate(0px, -' + p.topPosition + 'px)');
+				p.$rouletteTarget.css('-ms-transform', 'translate(0px, -' + p.topPosition + 'px)');
+				p.$rouletteTarget.css('-sand-transform', 'translate(0px, -' + p.topPosition + 'px)');
+				p.$rouletteTarget.css('-webkit-transform', 'translate(0px, -' + p.topPosition + 'px)');
 				//p.$rouletteTarget.css('transform', 'translate(0px, -' + p.topPosition + 'px)');
 			}
 			setTimeout(roll, 1);
