@@ -3,7 +3,7 @@ var clientSecret = '3e2a019830bc4ccc92b5e3ed2f53dddf';
 
 var instagram = new Instagram(clientId);
 var d = 0;
-var contextPath = 'http://192.168.1.107:8080/sorte.ar';
+var contextPath = 'http://thiagonego.github.io/sorte.ar';
 
 jQuery(document).ready(function(){
 

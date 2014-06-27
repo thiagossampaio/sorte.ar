@@ -234,7 +234,7 @@ Instagram.prototype.authenticate = function (opt_scope) {
 
   location.href = Instagram.AUTH_URL + '?' + Instagram.queryString_({
     client_id: this.clientId,
-    redirect_uri: 'http://192.168.1.107:8080/sorte.ar/fotos.html',
+    redirect_uri: 'http://thiagonego.github.io/sorte.ar/fotos.html',
     response_type: 'token',
     scope: scope.join(' ')
   });
