@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://pongstr.github.io/ -->
+<html class="no-js wf-adelle-i4-active wf-adelle-i7-active wf-adelle-n3-active wf-adelle-n4-active wf-adelle-n7-active wf-active">
+
+  <!--<![endif]-->
+  <head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+
+  <title> <%= title %> </title>
+
+  <meta name="author" content="Thiago Sampaio">
+  <meta name="description" content="Sorte.ar é uma ferramenta free para que você faça todos os seus sorteios do Instagram">
+  <meta name="keywords" content="sortear, sorteio, instagram, sorte, give way, loterie, trevo, gerar, randômico">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="shortcut icon" type="image/x-icon" href="<%= path %>assets/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<%= path %>assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<%= path %>assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="<%= path %>assets/ico/apple-touch-icon-57-precomposed.png">
+
+  <link rel="stylesheet" href="<%= path %>assets/css/docs.css">
+  <link rel="stylesheet" href="<%= path %>assets/css/font-awesome.css">
+
+</head>
+<body>
+
+<header>
+  <div id="home" class="jumbotron">
+    <div class="container">        
+        <h1>
+           <i class="fa fa-instagram"></i> Sorte.ar
+           <small class="visible-xs">version 0.0.1</small>
+        </h1>
+
+        <p>a forma mais fácil de sortear pessoas, comentários ou fotos direto do seu instagram. Fácil, rápido e muito bonito. Aprovei!</p>
+
+    <br/>
+    <a href="login" type="button" class="btn btn-lg btn-success">
+      <i class="fa fa-instagram"></i>
+      Logar com Instagram
+    </a>
+    <button id="logout" type="button" class="btn btn-lg btn-success js-btn-login" style="display:none;">
+      <i class="fa fa-instagram"></i>
+      Sair
+    </button>
+    <hr/>                  
+      </div>
+
+      <div class="row hidden-xs">
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+            <small>
+              Instagram brand icon is a trademark of Instagram. The use of this trademark does not indicate endorsement of Instagram by Pongstagr.am
+            </small>
+            <small>
+              <a href="http://getbootstrap.com/">Bootstrap</a> was created by <a href="http://twitter.com/mdo/">@mdo</a> &amp; <a href="http://twitter.com/fat">@fat</a> licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">Apache License v2.0</a>
+            </small>
+        </div>
+
+    </div><!-- end of .container -->
+  </div><!-- end of .jumbotron -->
+</header>
+
+<div id="principal" class="hide">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+        <a href="pongstagr.am.html#home" class="navbar-brand" data-hash="slide">Sorte.ar</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-left">
+
+          <!--li>
+            <a href="https://github.com/pongstr/">
+              <i class="fa fa-github-alt"></i> &nbsp;Github Project
+            </a>
+          </li--> 
+
+          <li>
+            <a href="pongstagr.am.html#comments" data-hash="slide">Comentários</a>
+          </li>
+
+          <li>
+            <a href="pongstagr.am.html#license" data-hash="slide">Licença</a>
+          </li>
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="https://github.com/pongstr/">
+              <i class="fa fa-sign-out"></i> &nbsp;Sair
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </div><!-- end of .container -->
+  </nav>
+
+    <!-- CONTENT -->
+    <div role="main">
+
+      <div id="get-started" class="section">
+        <div class="container">
+            <div id="fotos-container" class="row">
+              <div class="col-xs-12">               
+                <h2 class="text-success">
+                    Fotos
+                </h2>                
+                <hr/>
+
+                <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modal-sortear">
+                  Ok
+                </button>
+                <br/>
+
+                <!-- Modal Sortear -->
+                <div id="modal-sortear" class="modal fade">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Sortear Agora!</h4>
+                      </div>                      
+                      <div class="modal-body">
+                        <p>One fine body</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-success">Sortear</button>
+                      </div>                      
+                    </div>                    
+                  </div>
+                </div>
+
+
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+
+              </div>
+            </div>
+        </div>
+      </div><!-- end of .section -->
+
+      <div class="section">
+        <div class="container">
+          <div id="license" class="page-header" style="margin-top: 0;">
+            <h1 class="text-primary">Licença</h1>
+            <small class="help-block text-muted">Copyright 2013 &copy; Sorte.ar by Thiago Sampaio licensed under <a href="http://opensource.org/licenses/MIT">MIT License</a>.</small>
+          </div>
+          
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="text-muted text-justify">
+                <p>
+                  <small>
+                    Permission is hereby granted, free of charge, to any person obtaining a copy
+                    of this software and associated documentation files (the "Software"), to deal
+                    in the Software without restriction, including without limitation the rights
+                    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                    copies of the Software, and to permit persons to whom the Software is
+                    furnished to do so, subject to the following conditions:
+                  </small>
+                </p>
+
+                <p>
+                  <small>
+                    The above copyright notice and this permission notice shall be included in
+                    all copies or substantial portions of the Software.
+                  </small>
+                </p>
+
+                <p>
+                  <small>
+                    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+                    THE SOFTWARE.
+                  </small>
+                </p>
+              </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+
+  <script src="<%= path %>assets/js/jquery.min.js"></script>
+  <script src="<%= path %>assets/js/bootstrap.min.js"></script>
+  <script src="<%= path %>assets/js/ig_auth.js"></script>
+  <script src="<%= path %>assets/js/pongstagr.am.js"></script>  
+  <script src="<%= path %>assets/js/plugins.js"></script>   
+  <script src="<%= path %>assets/js/application.js"></script>
+  <script src="<%= path %>assets/js/index.js"></script>   
+
+</body>
+</html>
