@@ -9,6 +9,7 @@ var redirect_uri = "http://localhost:3000/instagram_redirect";
 var usarioLogado;
 var client_id = 'be36280ed5804eaba6c54e5369bc3519';
 var client_secret =  '3e2a019830bc4ccc92b5e3ed2f53dddf';
+
 /**
   Parametros de configuração da api do instagram
 */
@@ -20,7 +21,6 @@ api.use({
 
 /*Routes*/
 var index = require('./routes/index');
-//var feed = require('./routes/feed');
 
 var app = express();
 
@@ -52,7 +52,8 @@ exports.handleauth = function(req, res) {
     console.log(err,result);
     if (err) {
       console.log(err);
-      res.send("Didn't work");
+      //res.send("Didn't work");
+      res.redirect('/');
     } else {
       usarioLogado = result;
       res.redirect('/feed');
@@ -62,16 +63,19 @@ exports.handleauth = function(req, res) {
 app.get('/instagram_redirect', exports.handleauth);
 
 app.use('/', index);
-//app.use('/feed', feed);
 app.get('/feed', function(req, res){
   console.log(url.parse(req.url));
-  res.render('feed', { 
-      title: 'Sorte.ar | Faça aqui o seus sorteios do Instagram',
-      path: url.parse(req.url).path,
-      usarioLogado : usarioLogado,
-      client_id: client_id,
-      client_secret: client_secret
-  });
+  if(usarioLogado){
+    res.render('feed', { 
+        title: 'Sorte.ar | Faça aqui o seus sorteios do Instagram',
+        path: url.parse(req.url).path,
+        usarioLogado : usarioLogado,
+        client_id: client_id,
+        client_secret: client_secret
+    });
+  }else{
+    res.redirect('/');
+  }
 });
 
 
