@@ -211,3 +211,15 @@ body {
 	background-color: #fff;
 	padding: 20px 0;
 }
+
+#instagram-profile {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+  color: #52684f !important;
+}
+
+#instagram-profile .user-data {
+	color: #52684f !important;
+}
+#instagram-profile .user-data h3 {
+	font-weight: bold;
+}

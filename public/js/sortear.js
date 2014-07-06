@@ -4,8 +4,8 @@ var itens, quantidadeItens, rouletter, option, sorteado;
 
 jQuery(document).ready(function(){
     
-    var accessToken = getParameterByName('accessToken');
-    var media = getParameterByName('media');
+    var accessToken = jQuery('body').data('usuario-logado').access_token;
+    var media = jQuery('body').data('media');
     
     if (accessToken && media) {
 	
@@ -65,7 +65,7 @@ jQuery(document).ready(function(){
 	}
 	
     } else {
-	
+		console.log('else');
     }
     
 });

@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html
+	class="no-js wf-adelle-i4-active wf-adelle-i7-active wf-adelle-n3-active wf-adelle-n4-active wf-adelle-n7-active wf-active">
+
+	<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	
+	<title>Sorte.ar | Faça aqui o seus sorteios do Instagram</title> 
+	
+	<meta name="author" content="Thiago Sampaio">
+	<meta name="description" content="Sorte.ar é uma ferramenta free para que você faça todos os seus sorteios do Instagram">
+	<meta name="keywords" content="sortear, sorteio, instagram, sorte, give way, loterie, trevo, gerar, randômico">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<link rel="shortcut icon" type="image/x-icon" href="/assets/ico/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+
+	<link rel="stylesheet" href="/assets/css/docs.css">
+	<link rel="stylesheet" href="/assets/css/font-awesome.css">
+	<link rel="stylesheet" href="/assets/css/custom.css">
+	<style>
+		body {
+			padding-top: 52px;
+		}	
+	</style>	
+	</head>
+
+<body 
+
+	data-usuario-logado='<%-JSON.stringify(usarioLogado)%>' 
+	data-client-id='<%-JSON.stringify(client_id)%>'
+	data-usario="<%= usuario %>"
+	data-media="<%=  media %>"
+	>
+
+	<div id="principal">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+
+					<a href="pongstagr.am.html#home" class="navbar-brand"
+						data-hash="slide">Sorte.ar</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-collapse-1">
+
+					<ul class="nav navbar-nav navbar-left">
+
+						<li><a href="pongstagr.am.html#comments" data-hash="slide">Comentários</a>
+						</li>
+
+						<li><a href="pongstagr.am.html#license" data-hash="slide">Licença</a>
+						</li>
+
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="https://github.com/pongstr/"> <i
+								class="fa fa-sign-out"></i> &nbsp;Sair
+						</a></li>
+					</ul>
+
+				</div>
+			</div>
+			<!-- end of .container -->
+		</nav>
+
+		<!-- CONTENT -->
+		<div role="main" class="container">
+			<ul class="breadcrumb row">
+				<li><a href="http://192.168.1.107:8080/sorte.ar">Início</a></li>
+				<li><a href="http://192.168.1.107:8080/sorte.ar/fotos.html">Fotos</a></li>
+				<li class="active">Sorteio</li>
+			</ul>
+
+			<div id="fotos-container" class="row">
+				<div class="col-xs-12 visible-lg visible-md">
+					<h2 class="text-success ">Foto</h2>
+					<hr />
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12">
+
+					<div class="roulette_container well" >
+
+					    <div class="github-fork-ribbon-wrapper right">
+					        <div class="github-fork-ribbon">
+					            <a href="https://github.com/simonwhitaker/github-fork-ribbon-css">Parabéns</a>
+					        </div>
+					    </div>	
+
+						<div id="roullete" class="roulette">		
+					    </div>
+		            </div>				
+				</div>
+				<div class="col-xs-12">
+					<p>
+						<button class="btn btn-large btn-success btn-lg btn-block start"> Sorte.ar </button>
+					</p>
+				</div>
+			</div>
+		</div>
+		
+
+			<div class="section">
+				<div class="container">
+					<div id="license" class="page-header" style="margin-top: 0;">
+						<h1 class="text-primary">Licença</h1>
+						<small class="help-block text-muted">Copyright 2013 &copy;
+							Sorte.ar by Thiago Sampaio licensed under <a
+							href="http://opensource.org/licenses/MIT">MIT License</a>.
+						</small>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="text-muted text-justify">
+								<p>
+									<small> Permission is hereby granted, free of charge,
+										to any person obtaining a copy of this software and associated
+										documentation files (the "Software"), to deal in the Software
+										without restriction, including without limitation the rights
+										to use, copy, modify, merge, publish, distribute, sublicense,
+										and/or sell copies of the Software, and to permit persons to
+										whom the Software is furnished to do so, subject to the
+										following conditions: </small>
+								</p>
+
+								<p>
+									<small> The above copyright notice and this permission
+										notice shall be included in all copies or substantial portions
+										of the Software. </small>
+								</p>
+
+								<p>
+									<small> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT
+										WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+										LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+										PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+										AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
+										OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+										OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+										SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. </small>
+								</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>		
+	</div>
+
+		<script id="comentarios"  type="x-tmpl-mustache">
+			<div class="media item">
+			      <a href="#" class="pull-left">
+			        <img src="{{from.profile_picture}}" class="media-object" alt="64x64" style="width: 64px; height: 64px;">
+			      </a>
+			      <div class="media-body">
+			        <h4 class="media-heading">@{{from.username}}</h4>
+			       	{{text}}		                 
+			      </div>
+			</div>
+		</script>
+		<script id="fotoPrincipal"  type="x-tmpl-mustache">
+		  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+				<div class="thumbnail text-center">
+					<a href="#">
+						<img class="" src="{{images.standard_resolution.url}}" width="100%" height="100%" style="opacity: 1;">
+					</a> 
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="row foto-principal-detail">
+					<div class="">	
+						<strong class="usuario text-truncate">@{{user.username}}</strong>
+						<small class="help-block text-muted">{{user.bio}}</small>
+					</div>
+					<div class="">
+						<dl>
+  							<dt>Data</dt>
+  							<dd>{{created_time}}</dd>
+  							<dt>Vencedor</dt>
+  							<dd class="text-truncate">Thiago Santos Sampaio</dd>
+						</dl>
+					</div>	
+					<ul class="list-inline text-muted hidden-xs">
+  						<li><i class="fa fa-heart"></i>&nbsp; {{likes.count}}</li>
+						<li><i class="fa fa-comment"></i>&nbsp; {{comments.count}}</li>
+					</ul>
+					<div class="hidden-xs text-muted">
+						<p>
+							{{caption.text}}
+						</p>
+					</div>	
+				</div>
+			</div>
+		</script>		
+
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/mustache.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+		<script src="/assets/js/pongstagr.am.js"></script>
+		<script src="/assets/js/plugins.js"></script>
+		<script src="/assets/js/roulette.js"></script>		
+		<script src="/assets/js/holder.js"></script>
+		<script src="/assets/js/application.js"></script>
+		<script src="/assets/js/sortear.js"></script>
+</body>
+</html>
