@@ -6,8 +6,7 @@ var url = require("url");
 router.get('/', function(req, res) {
   res.render('index', { 
   		title: 'Sorte.ar | Faça aqui o seus sorteios do Instagram',
-  		path: url.parse(req.url).path,
-  		layout: 'someSpecificLayout'
+  		path: url.parse(req.url).path
   });
 });
 

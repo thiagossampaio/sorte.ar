@@ -1,146 +1,21 @@
-<!DOCTYPE html>
-<!-- saved from url=(0038)http://pongstr.github.io/ -->
-<html class="no-js wf-adelle-i4-active wf-adelle-i7-active wf-adelle-n3-active wf-adelle-n4-active wf-adelle-n7-active wf-active">
+	<div id="dados" class="hide" data-usuario-logado='<%-JSON.stringify(usarioLogado)%>' data-client-id='<%-JSON.stringify(client_id)%>'></div>
 
-  <!--<![endif]-->
-  <head>
-
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta charset="utf-8">
-
-  <title> <%= title %> </title>
-
-  <meta name="author" content="Thiago Sampaio">
-  <meta name="description" content="Sorte.ar é uma ferramenta free para que você faça todos os seus sorteios do Instagram">
-  <meta name="keywords" content="sortear, sorteio, instagram, sorte, give way, loterie, trevo, gerar, randômico">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-
-  <link rel="shortcut icon" type="image/x-icon" href="/assets/ico/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
-
-  <link rel="stylesheet" href="/assets/css/docs.css">
-  <link rel="stylesheet" href="/assets/css/font-awesome.css">
-  <link rel="stylesheet" href="/assets/css/custom.css">
-	<style>
-		body {
-			padding-top: 52px;
-		}	
-	</style>
-</head>
-<body data-usuario-logado='<%-JSON.stringify(usarioLogado)%>' data-client-id='<%-JSON.stringify(client_id)%>'>
-
-	<div id="principal">
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target="#navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-
-					<a href="pongstagr.am.html#home" class="navbar-brand" data-hash="slide">Sorte.ar</a>
-				</div>
-				<div class="collapse navbar-collapse" id="navbar-collapse-1">
-
-					<ul class="nav navbar-nav navbar-right"> 
-						<li>
-							<a id="recentes" href="#"> 
-							<i class="fa fa-sign-out"></i>
-								&nbsp;Sua publicações
-							</a>
-						</li>
-						<li>
-							<a id="logout" href="#"> 
-							<i class="fa fa-sign-out"></i>
-								&nbsp;Sair
-							</a>
-						</li>
-					</ul>
-
-				</div>
-			</div>
-			<!-- end of .container -->
-		</nav>
-
-		<!-- CONTENT -->
-		<div role="main" class="container">
-			
-			<div class="row">
-				<ul class="breadcrumb">
-					<li><a href="http://localhost:3000/sorte.ar/">Início</a></li>
-					<li class="active">Fotos</li>
-				</ul>
-			</div>
-			
-			<div id="fotos-container" class="row">
-				<div class="col-xs-12 visible-lg visible-md">
-					<h2 class="text-success ">Recentes</h2>
-					<hr />
-				</div>
-			</div>
-
-			<div id="instagram-profile" class="row"></div>
-			<div id="instagram-feed" class="row"></div>
-
-			<div class="section visible-lg visible-md">
-				<div id="license" class="page-header" style="margin-top: 0;">
-					<h1 class="text-primary">Licença</h1>
-					<small class="help-block text-muted">Copyright 2013 &copy;
-						Sorte.ar by Thiago Sampaio licensed under <a
-						href="http://opensource.org/licenses/MIT">MIT License</a>.
-					</small>
-				</div>
-
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="text-muted text-justify">
-							<p>
-								<small> Permission is hereby granted, free of charge, to
-									any person obtaining a copy of this software and associated
-									documentation files (the "Software"), to deal in the Software
-									without restriction, including without limitation the rights to
-									use, copy, modify, merge, publish, distribute, sublicense,
-									and/or sell copies of the Software, and to permit persons to
-									whom the Software is furnished to do so, subject to the
-									following conditions: </small>
-							</p>
-
-							<p>
-								<small> The above copyright notice and this permission
-									notice shall be included in all copies or substantial portions
-									of the Software. </small>
-							</p>
-
-							<p>
-								<small> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT
-									WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-									LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-									PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-									AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
-									OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-									OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-									SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. </small>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
+	<div class="row">
+		<ul class="breadcrumb">
+			<li><a href="http://localhost:3000/sorte.ar/">Início</a></li>
+			<li class="active">Fotos</li>
+		</ul>
+	</div>
+	
+	<div id="fotos-container" class="row">
+		<div class="col-xs-12 visible-lg visible-md">
+			<h2 class="text-success ">Recentes</h2>
+			<hr />
 		</div>
 	</div>
 
+	<div id="instagram-profile" class="row"></div>
+	<div id="instagram-feed" class="row"></div>
 
-	<script src="/assets/js/jquery.min.js"></script>
-	<script src="/assets/js/bootstrap.min.js"></script>
-	<script src="/assets/js/pongstagr.am.js"></script>  
-	<script src="/assets/js/plugins.js"></script>   
-	<script src="/assets/js/application.js"></script>
+	<%- contentFor('view_scripts') %>
 	<script src="/assets/js/recentes.js"></script>
-
-</body>
-</html>
