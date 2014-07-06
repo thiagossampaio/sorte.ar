@@ -8,6 +8,7 @@
   "dependencies": {
     "express": "~4.2.0",
     "ejs-locals": "1.0.2",
+    "express-ejs-layouts" : "1.1.0",
     "static-favicon": "~1.0.0",
     "morgan": "~1.0.0",
     "cookie-parser": "~1.0.1",

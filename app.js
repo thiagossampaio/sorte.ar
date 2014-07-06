@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var url = require("url");
+var expressLayouts = require('express-ejs-layouts');
 var redirect_uri = "http://localhost:3000/instagram_redirect";
 var usarioLogado;
 var client_id = 'be36280ed5804eaba6c54e5369bc3519';
@@ -27,6 +28,8 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('layout', 'layout_principal')
+app.use(expressLayouts);
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -49,20 +52,20 @@ app.get('/login', exports.authorize_user);
 */
 exports.handleauth = function(req, res) {
   api.authorize_user(req.query.code, redirect_uri, function(err, result) {
-    console.log(err,result);
     if (err) {
       console.log(err);
       //res.send("Didn't work");
       res.redirect('/');
     } else {
       usarioLogado = result;
-      res.redirect('/feed');
+      res.redirect('/recentes');
     }
   });
 };
 app.get('/instagram_redirect', exports.handleauth);
 
 app.use('/', index);
+
 app.get('/feed', function(req, res){
   console.log(url.parse(req.url));
   if(usarioLogado){
@@ -71,7 +74,40 @@ app.get('/feed', function(req, res){
         path: url.parse(req.url).path,
         usarioLogado : usarioLogado,
         client_id: client_id,
-        client_secret: client_secret
+        client_secret: client_secret,
+        layout: 'layout_comun'
+    });
+  }else{
+    res.redirect('/');
+  }
+});
+
+app.get('/recentes', function(req, res){
+  if(usarioLogado){
+    res.render('recentes', { 
+        title: 'Sorte.ar | Faça aqui o seus sorteios do Instagram',
+        path: url.parse(req.url).path,
+        usarioLogado : usarioLogado,
+        client_id: client_id,
+        client_secret: client_secret,
+        layout: 'layout_comun'
+    });
+  }else{
+    res.redirect('/');
+  }
+});
+
+app.get('/sortear/:usuario/media/:media', function(req, res){
+  if(usarioLogado){
+    res.render('sortear', { 
+        title: 'Sorte.ar | Faça aqui o seus sorteios do Instagram',
+        path: url.parse(req.url).path,
+        usarioLogado : usarioLogado,
+        client_id: client_id,
+        client_secret: client_secret,
+        usuario: req.param("usuario"),
+        media: req.param("media"),
+        layout: 'layout_comun'
     });
   }else{
     res.redirect('/');

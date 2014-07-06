@@ -1,0 +1,91 @@
+<div id="dados" class="hide" 
+	data-usuario-logado='<%-JSON.stringify(usarioLogado)%>' 
+	data-media='<%= media %>'>
+</div>
+
+<ul class="breadcrumb row">
+	<li><a href="http://192.168.1.107:8080/sorte.ar">Início</a></li>
+	<li><a href="http://192.168.1.107:8080/sorte.ar/fotos.html">Fotos</a></li>
+	<li class="active">Sorteio</li>
+</ul>
+
+<div id="fotos-container" class="row">
+	<div class="col-xs-12 visible-lg visible-md">
+		<!-- <h2 class="text-success ">Foto</h2> -->
+		<hr />
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+
+		<div class="roulette_container well" >
+
+		    <div class="github-fork-ribbon-wrapper right">
+		        <div class="github-fork-ribbon">
+		            <a href="https://github.com/simonwhitaker/github-fork-ribbon-css">Parabéns</a>
+		        </div>
+		    </div>	
+
+			<div id="roullete" class="roulette">		
+		    </div>
+        </div>				
+	</div>
+	<div class="col-xs-12">
+		<p>
+			<button class="btn btn-large btn-success btn-lg btn-block start"> Sorte.ar </button>
+		</p>
+	</d
+	iv>
+</div>
+
+
+<script id="comentarios"  type="x-tmpl-mustache">
+	<div class="media item" data-full-name="{{from.full_name}}" data-username="{{from.username}}">
+	      <a href="#" class="pull-left">
+	        <img src="{{from.profile_picture}}" class="media-object" alt="64x64" style="width: 64px; height: 64px;">
+	      </a>
+	      <div class="media-body">
+	        <h4 class="media-heading">@{{from.username}}</h4>
+	       	{{text}}		                 
+	      </div>
+	</div>
+</script>
+<script id="fotoPrincipal"  type="x-tmpl-mustache">
+  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+		<div class="thumbnail text-center">
+			<a href="#">
+				<img class="" src="{{images.standard_resolution.url}}" width="100%" height="100%" style="opacity: 1;">
+			</a> 
+		</div>
+	</div>
+	<div class="col-xs-6">
+		<div class="row foto-principal-detail">
+			<div class="">
+				<dl>
+					<dt>Nome:</dt>
+					<dd id="sorteio_vencedor_nome" class="text-truncate"></dd>
+					<dt>Usuário:</dt>
+					<dd id="sorteio_vencedor_usuario" class="text-truncate"></dd>
+					<dt>Data:</dt>
+					<dd id="sorteio_data"></dd>
+				</dl>
+			</div>	
+			<ul class="list-inline text-muted hidden-xs">
+					<li><i class="fa fa-heart"></i>&nbsp; {{likes.count}}</li>
+				<li><i class="fa fa-comment"></i>&nbsp; {{comments.count}}</li>
+			</ul>
+			<div class="hidden-xs text-muted">
+				<p>
+					{{caption.text}}
+				</p>
+			</div>	
+		</div>
+	</div>
+</script>		
+
+<%- contentFor('view_scripts') %>
+<script src="/assets/js/mustache.js"></script>
+<script src="/assets/js/roulette.js"></script>		
+<script src="/assets/js/sortear.js"></script>
+

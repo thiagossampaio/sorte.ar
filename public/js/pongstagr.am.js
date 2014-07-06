@@ -68,12 +68,12 @@
             _profile += '     <img src="'+ options.profile_picture +'" width="'+ options.picture_size +'"  height="'+ options.picture_size +'" alt="'+ options.username +'">'
             _profile += '   </div>'
             _profile += '   <div class="counts">'
-            _profile += '     <span class="h4">'+ options.media +' <small>Posts</small></span>'
-            _profile += '     <span class="h4">'+ options.followed_by +' <small>Followers</small></span>'
-            _profile += '     <span class="h4">'+ options.follows +' <small>Following</small></span>'
+            _profile += '     <span class="h4">'+ options.media +' <small>Fotos</small></span>'
+            _profile += '     <span class="h4">'+ options.followed_by +' <small>Seguidores</small></span>'
+            _profile += '     <span class="h4">'+ options.follows +' <small>Seguindo</small></span>'
             _profile += '   </div>'
             _profile += '   <div class="user-data">'
-            _profile += '     <h3>'+ options.username +'</h3>'
+            _profile += '     <h3>@'+ options.username +'</h3>'
             _profile += '     <small>'+ options.full_name +' - <a href="'+ options.website +'">' + options.website +'</a></small>'
             _profile += '     <p>'+ options.bio +'</p>'
             _profile += '   </div>'
@@ -92,11 +92,14 @@
         var _thumbnail  = '<div class="'+ options.dflt.column +'">'
             _thumbnail += ' <div class="thumbnail text-center ' + options.dflt.effects + '">'
 
-          options.dflt.timestamp !== false ?
-            _thumbnail += '<strong>'+ options.data.timestamp +'</strong>' : null
+          //options.dflt.timestamp !== false ?
+            _thumbnail += '<img width="20px" size="" class="img-circle pull-left" src="'+ options.data.profile_picture +'">' 
+            _thumbnail += '<small class="text-muted">'+options.data.username+'</small>'
+            //_thumbnail += '<strong>'+ options.data.timestamp +'</strong>'
             _thumbnail += '   <div class="'+ options.dflt.preload +'" id="'+ options.dflt.show + '-' + options.data.id +'-thmb-loadr" />'
             //_thumbnail += '   <a href="#'+ options.data.id +'" id="triggr-'+ options.data.id +'">'
-            _thumbnail += '   <a href="'+ contextPath +'/sortear.html?accessToken='+ jQuery('body').data('usuario-logado').access_token +'&media='+ options.data.id+'" id="triggr-'+ options.data.id +'">'
+            //_thumbnail += '   <a href="/ml?accessToken='+ jQuery('#dados').data('usuario-logado').access_token +'&media='+ options.data.id+'" id="triggr-'+ options.data.id +'">'
+            _thumbnail += '   <a href="/sortear/' + jQuery('#dados').data('usuario-logado').user.id + '/media/' +options.data.id+'">'
             _thumbnail += '     <img id="'+ options.dflt.show + '-' + options.data.id +'-thmb" src="'+ options.data.thumbnail +'" alt="'+ options.data.caption +'">'
             _thumbnail += '   </a>'
 
@@ -276,7 +279,6 @@
     }
 
     function media (data, option) {
-      console.log(data);
       $.each(data, function (a, b) {
         var newtime = new Date(b.created_time * 1000)
           , created = newtime.toDateString()
@@ -330,7 +332,6 @@
     }
 
     function ajaxdata (option) {
-      console.log(option);
       $.ajax({
           url      : option.url
         , cache    : true
@@ -370,7 +371,14 @@
 
       case 'profile':
         ajaxdata({
-            url: apiurl + options.accessId + '?access_token=' + options.accessToken
+            url: apiurl + options.user_id + '?access_token=' + options.accessToken
+          , opt: options
+        })
+      break
+      
+      case 'recentes':
+        ajaxdata({
+            url: apiurl + options.user_id + '/media/recent/?access_token=' + options.accessToken
           , opt: options
         })
       break
