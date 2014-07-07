@@ -19,7 +19,7 @@
 			imageCount : null,
 			$images : null,
 			originalStopImageNumber : null,
-			totalHeight : null,
+			totalHeight : 0,
 			topPosition : 0,
 
 			heightItem: 0,
@@ -69,6 +69,7 @@
 			var speed_ = p.speed;
 
 			if (p.isRunUp) {
+
 				if (p.distance <= p.runUpDistance) {
 					var rate_ = ~~((p.distance / p.runUpDistance) * p.speed);
 					speed_ = rate_ + 1;
@@ -113,22 +114,18 @@
 			defaultProperty.originalStopImageNumber = p.stopImageNumber;
 			if (!p.$images) {
 				//p.$images = $roulette.find('img').remove();
+				p.imageHeight = jQuery('.item:first').height();
 				p.$images = $roulette.find('.item').remove();
 				p.imageCount = p.$images.length;
-				/*
-				p.$images.eq(0).bind('load',function(){
-					p.imageHeight = $(this).height();
-					$roulette.css({ 'height' : (p.imageHeight + 'px') });
-					p.totalHeight = p.imageCount * p.imageHeight;
-					p.runUpDistance = 2 * p.imageHeight;
-				})
-				*/
-
-				var tmp = p.$images.eq(0);
-				p.imageHeight = tmp.height();
 				//$roulette.css({ 'height' : (p.imageHeight + 'px') });
 				$roulette.css({ 'height' : ('100px') });
 				p.totalHeight = p.imageCount * p.imageHeight;
+
+				console.log('p.totalHeight: ',p.totalHeight);
+				console.log('p.imageCount: ',p.imageCount);
+				console.log('p.imageHeight: ',p.imageHeight);
+				console.log('p.$images: ',p.$images[0]);
+
 				p.runUpDistance = 2 * p.imageHeight;
 
 				//Não precisa verificar se a foto ainda não carregou
