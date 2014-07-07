@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var url = require("url");
+var fs    = require('fs');
+var nconf = require('nconf');
 var expressLayouts = require('express-ejs-layouts');
 var usarioLogado;
 var client_id = 'be36280ed5804eaba6c54e5369bc3519';
@@ -38,7 +40,9 @@ app.use('/assets', express.static(path.join(__dirname, 'public')));
 
 // development error handler
 // will print stacktrace
-if (app.get('NODE_ENV') === 'production') {
+nconf.argv().env();
+console.log('NODE_ENV: ' + nconf.get('NODE_ENV'));
+if (nconf.get('NODE_ENV') == 'production') {
 
   contextPath = 'http://sorte.herokuapp.com/';
 
