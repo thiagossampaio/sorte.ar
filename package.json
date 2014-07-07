@@ -1,6 +1,8 @@
 {
   "name": "sorte.ar",
   "version": "0.0.1",
+  "description": "This example app is so cool.",
+  "main": "app.s",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -8,6 +10,7 @@
   "dependencies": {
     "express": "~4.2.0",
     "ejs-locals": "1.0.2",
+    "express-ejs-layouts" : "1.1.0",
     "static-favicon": "~1.0.0",
     "morgan": "~1.0.0",
     "cookie-parser": "~1.0.1",
@@ -15,5 +18,23 @@
     "debug": "~0.7.4",
     "ejs": "~0.8.5",
     "instagram-node": "0.4.2"    
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thiagonego/sorte.ar.git"
+  },
+  "keywords": [
+    "instagram",
+    "sortear",
+    "give way",
+    "loterie",
+    "nodejs"
+  ],
+  "author": "thiagonego",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thiagonego/sorte.ar/issues"
+  }  
+
+
 }
