@@ -17,14 +17,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <link rel="shortcut icon" type="image/x-icon" href="/assets/ico/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" type="image/x-icon" href="<%= contextPath %>assets/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<%= contextPath %>assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<%= contextPath %>assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="<%= contextPath %>assets/ico/apple-touch-icon-57-precomposed.png">
 
-  <link rel="stylesheet" href="/assets/css/docs.css">
-  <link rel="stylesheet" href="/assets/css/font-awesome.css">
-  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="stylesheet" href="<%= contextPath %>assets/css/docs.css">
+  <link rel="stylesheet" href="<%= contextPath %>assets/css/font-awesome.css">
+  <link rel="stylesheet" href="<%= contextPath %>assets/css/custom.css">
 </head>
 
 <body>
@@ -39,19 +39,19 @@
               class="icon-bar"></span> <span class="icon-bar"></span> <span
               class="icon-bar"></span>
           </button>
-          <a href="<%= path %>/" class="navbar-brand" data-hash="slide">Sorte.ar</a>
+          <a href="<%= contextPath %>" class="navbar-brand">Sorte.ar</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
           <ul class="nav navbar-nav"> 
             <li>
-              <a href="/recentes">
+              <a href="<%= contextPath %>recentes">
                 <i class="fa fa-home"></i>
                 Início
               </a>
             </li>
             <li>
-              <a href="/feed">
+              <a href="<%= contextPath %>feed">
                 <i class="fa fa-instagram"></i>
                 Feed
               </a>
@@ -124,11 +124,11 @@
 
 	</div>
 	
-	<script src="/assets/js/jquery.min.js"></script>
-	<script src="/assets/js/bootstrap.min.js"></script>
-	<script src="/assets/js/pongstagr.am.js"></script>  
-	<script src="/assets/js/plugins.js"></script>   
-	<script src="/assets/js/application.js"></script>
+	<script src="<%= contextPath %>assets/js/jquery.min.js"></script>
+	<script src="<%= contextPath %>assets/js/bootstrap.min.js"></script>
+	<script src="<%= contextPath %>assets/js/pongstagr.am.js"></script>  
+	<script src="<%= contextPath %>assets/js/plugins.js"></script>   
+	<script src="<%= contextPath %>assets/js/application.js"></script>
 	<%- defineContent('view_scripts') %> 
 
 </body>

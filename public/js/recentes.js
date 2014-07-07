@@ -1,7 +1,5 @@
 jQuery(document).ready(function(){
 
-	//login();
-	
 	jQuery('#instagram-feed').pongstgrm({
 	    accessId: jQuery('#dados').data('client-id'),
 	    accessToken: jQuery('#dados').data('usuario-logado').access_token,
