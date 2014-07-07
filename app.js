@@ -9,18 +9,9 @@ var fs    = require('fs');
 var nconf = require('nconf');
 var expressLayouts = require('express-ejs-layouts');
 var usarioLogado;
-var client_id = 'be36280ed5804eaba6c54e5369bc3519';
-var client_secret =  '3e2a019830bc4ccc92b5e3ed2f53dddf';
+var client_id;
+var client_secret;
 var contextPath;
-
-/**
-  Parametros de configuração da api do instagram
-*/
-var api = require('instagram-node').instagram();
-api.use({
-  client_id: client_id,
-  client_secret: client_secret
-});
 
 var app = express();
 
@@ -38,12 +29,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/assets', express.static(path.join(__dirname, 'public')));
 
-// development error handler
+// development  error handler
 // will print stacktrace
 nconf.argv().env();
 console.log('NODE_ENV: ' + nconf.get('NODE_ENV'));
 if (nconf.get('NODE_ENV') == 'production') {
 
+  client_id = '209a14dbcc1046e29d2f918da8e35e61';
+  client_secret =  '3dc5ce58724b4045b9eca63b161a3c86';  
   contextPath = 'http://sorte.herokuapp.com/';
   client_id = '209a14dbcc1046e29d2f918da8e35e61';
   client_secret =  '3dc5ce58724b4045b9eca63b161a3c86';  
@@ -57,10 +50,21 @@ if (nconf.get('NODE_ENV') == 'production') {
           error: err
       });
   });
+  client_id = 'be36280ed5804eaba6c54e5369bc3519';
+  client_secret =  '3e2a019830bc4ccc92b5e3ed2f53dddf';  
   contextPath = 'http://localhost:3000/';
 
 }
 var redirect_uri = contextPath + 'instagram_redirect';
+
+/**
+  Parametros de configuração da api do instagram
+*/
+var api = require('instagram-node').instagram();
+api.use({
+  client_id: client_id,
+  client_secret: client_secret
+});
 
 app.get('/', function(req, res){
     res.render('index', { 
