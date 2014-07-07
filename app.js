@@ -45,6 +45,8 @@ console.log('NODE_ENV: ' + nconf.get('NODE_ENV'));
 if (nconf.get('NODE_ENV') == 'production') {
 
   contextPath = 'http://sorte.herokuapp.com/';
+  client_id = '209a14dbcc1046e29d2f918da8e35e61';
+  client_secret =  '3dc5ce58724b4045b9eca63b161a3c86';  
 
 }else{
 
