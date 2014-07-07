@@ -6,7 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 
-		<title> <%= title %> </title>
+		<title>  </title>
 
 		<meta name="author" content="Thiago Sampaio">
 		<meta name="description" content="Sorte.ar é uma ferramenta free para que você faça todos os seus sorteios do Instagram">
@@ -15,13 +15,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 
-		<link rel="shortcut icon" type="image/x-icon" href="<%= path %>assets/ico/favicon.ico">
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<%= path %>assets/ico/apple-touch-icon-144-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<%= path %>assets/ico/apple-touch-icon-114-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" href="<%= path %>assets/ico/apple-touch-icon-57-precomposed.png">
+		<link rel="shortcut icon" type="image/x-icon" href="<%= contextPath %>assets/ico/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<%= contextPath %>assets/ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<%= contextPath %>assets/ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="<%= contextPath %>assets/ico/apple-touch-icon-57-precomposed.png">
 
-		<link rel="stylesheet" href="<%= path %>assets/css/docs.css">
-		<link rel="stylesheet" href="<%= path %>assets/css/font-awesome.css">
+		<link rel="stylesheet" href="<%= contextPath %>assets/css/docs.css">
+		<link rel="stylesheet" href="<%= contextPath %>assets/css/font-awesome.css">
 
 	</head>
 
@@ -29,11 +29,13 @@
 		<%- body %> 
 	</body>
 
-	<script src="<%= path %>assets/js/jquery.min.js"></script>
-	<script src="<%= path %>assets/js/bootstrap.min.js"></script>
-	<script src="<%= path %>assets/js/ig_auth.js"></script>
-	<script src="<%= path %>assets/js/pongstagr.am.js"></script>  
-	<script src="<%= path %>assets/js/plugins.js"></script>   
-	<script src="<%= path %>assets/js/application.js"></script>	
+	<script src="<%= contextPath %>assets/js/jquery.min.js"></script>
+	<script src="<%= contextPath %>assets/js/bootstrap.min.js"></script>
+	<script src="<%= contextPath %>assets/js/ig_auth.js"></script>
+	<script src="<%= contextPath %>assets/js/pongstagr.am.js"></script>  
+	<script src="<%= contextPath %>assets/js/plugins.js"></script>   
+	<script src="<%= contextPath %>assets/js/application.js"></script>	
+
 	<%- defineContent('view_scripts') %> 	
+
 </html>

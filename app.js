@@ -6,10 +6,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var url = require("url");
 var expressLayouts = require('express-ejs-layouts');
-var redirect_uri = "http://localhost:3000/instagram_redirect";
 var usarioLogado;
 var client_id = 'be36280ed5804eaba6c54e5369bc3519';
 var client_secret =  '3e2a019830bc4ccc92b5e3ed2f53dddf';
+var contextPath;
 
 /**
   Parametros de configuração da api do instagram
@@ -19,9 +19,6 @@ api.use({
   client_id: client_id,
   client_secret: client_secret
 });
-
-/*Routes*/
-var index = require('./routes/index');
 
 var app = express();
 
@@ -39,32 +36,59 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/assets', express.static(path.join(__dirname, 'public')));
 
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+    
+  app.use(function(err, req, res, next) {
+      res.status(err.status || 500);
+      res.render('error', {
+          message: err.message,
+          error: err
+      });
+  });
+
+  contextPath = 'http://localhost:3000/';
+
+}else{
+
+  contextPath = 'http://sorte.herokuapp.com/';
+
+}
+var redirect_uri = contextPath + 'instagram_redirect';
+
+app.get('/', function(req, res){
+    res.render('index', { 
+        title: 'Sorte.ar | Faça aqui o seus sorteios do Instagram',
+        usarioLogado : usarioLogado,
+        contextPath: contextPath,
+        client_id: client_id,
+        client_secret: client_secret,
+        layout: 'layout_principal'
+    }); 
+});
+
 /*
   Implementando a rota de autorização do usuario instagram
 */
-exports.authorize_user = function(req, res) {
+app.get('/login', function(req, res) {
   res.redirect(api.get_authorization_url(redirect_uri, { scope: ['likes'], state: 'a state' }));
-};
-app.get('/login', exports.authorize_user);
+});
 
 /*
   Implementando a roda de redirecionamento do instagram
 */
-exports.handleauth = function(req, res) {
+app.get('/instagram_redirect', function(req, res) {
   api.authorize_user(req.query.code, redirect_uri, function(err, result) {
     if (err) {
       console.log(err);
-      //res.send("Didn't work");
       res.redirect('/');
     } else {
       usarioLogado = result;
       res.redirect('/recentes');
     }
   });
-};
-app.get('/instagram_redirect', exports.handleauth);
-
-app.use('/', index);
+});
 
 app.get('/feed', function(req, res){
   console.log(url.parse(req.url));
@@ -73,6 +97,7 @@ app.get('/feed', function(req, res){
         title: 'Sorte.ar | Faça aqui o seus sorteios do Instagram',
         path: url.parse(req.url).path,
         usarioLogado : usarioLogado,
+        contextPath: contextPath,
         client_id: client_id,
         client_secret: client_secret,
         layout: 'layout_comun'
@@ -87,6 +112,7 @@ app.get('/recentes', function(req, res){
     res.render('recentes', { 
         title: 'Sorte.ar | Faça aqui o seus sorteios do Instagram',
         path: url.parse(req.url).path,
+        contextPath: contextPath,
         usarioLogado : usarioLogado,
         client_id: client_id,
         client_secret: client_secret,
@@ -103,6 +129,7 @@ app.get('/sortear/:usuario/media/:media', function(req, res){
         title: 'Sorte.ar | Faça aqui o seus sorteios do Instagram',
         path: url.parse(req.url).path,
         usarioLogado : usarioLogado,
+        contextPath: contextPath,
         client_id: client_id,
         client_secret: client_secret,
         usuario: req.param("usuario"),
@@ -122,18 +149,6 @@ app.use(function(req, res, next) {
     next(err);
 });
 /// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
 
 // production error handler
 // no stacktraces leaked to user

@@ -6,7 +6,7 @@ jQuery(document).ready(function(){
 	    accessId: jQuery('#dados').data('client-id'),
 	    accessToken: jQuery('#dados').data('usuario-logado').access_token,
 	    column: 'col-xs-12 col-md-4 col-sm-3 col-lg-2',  // you use customized columns
-	    count: 5,                      // set the number of media to display
+	    count: 20,                      // set the number of media to display
 	    user_id: jQuery('#dados').data('usuario-logado').user.id,
 	    show: 'recentes'
 	});	
@@ -15,9 +15,7 @@ jQuery(document).ready(function(){
 	    accessId: jQuery('#dados').data('client-id'),
 	    accessToken: jQuery('#dados').data('usuario-logado').access_token,
 	    user_id: jQuery('#dados').data('usuario-logado').user.id,
-        picture_size: '64', // sets profile picture to 64x64 pixels, no need to add px
-        //profile_bg_img: "../img/1novo.jpg",
-    	//profile_bg_color: '#d9534f',
+        picture_size: '80', // sets profile picture to 64x64 pixels, no need to add px
 	    show: 'profile'
 	});
 

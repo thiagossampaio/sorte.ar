@@ -34,6 +34,12 @@
   </div><!-- end of .jumbotron -->
 </header>
 
+<div
+  id="dados" 
+  class="hide" 
+  data-context-path='<%= contextPath %>'
+</div>
+
 <div id="principal" class="hide">
   <nav class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -186,4 +192,4 @@
 </div>
 
 <%- contentFor('view_scripts') %>
-<script src="<%= path %>assets/js/index.js"></script>   
+<script src="<%= contextPath %>assets/js/index.js"></script>   
