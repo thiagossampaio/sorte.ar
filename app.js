@@ -38,8 +38,12 @@ app.use('/assets', express.static(path.join(__dirname, 'public')));
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
-    
+if (app.get('NODE_ENV') === 'production') {
+
+  contextPath = 'http://sorte.herokuapp.com/';
+
+}else{
+
   app.use(function(err, req, res, next) {
       res.status(err.status || 500);
       res.render('error', {
@@ -47,12 +51,7 @@ if (app.get('env') === 'development') {
           error: err
       });
   });
-
   contextPath = 'http://localhost:3000/';
-
-}else{
-
-  contextPath = 'http://sorte.herokuapp.com/';
 
 }
 var redirect_uri = contextPath + 'instagram_redirect';
