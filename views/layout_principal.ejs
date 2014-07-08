@@ -26,16 +26,18 @@
 	</head>
 
 	<body> 
+		
 		<%- body %> 
+
+		<script src="<%= contextPath %>assets/js/jquery.min.js"></script>
+		<script src="<%= contextPath %>assets/js/bootstrap.min.js"></script>
+		<script src="<%= contextPath %>assets/js/ig_auth.js"></script>
+		<script src="<%= contextPath %>assets/js/pongstagr.am.js"></script>  
+		<script src="<%= contextPath %>assets/js/plugins.js"></script>   
+		<script src="<%= contextPath %>assets/js/application.js"></script>	
+
+		<%- defineContent('view_scripts') %> 	
+
 	</body>
-
-	<script src="<%= contextPath %>assets/js/jquery.min.js"></script>
-	<script src="<%= contextPath %>assets/js/bootstrap.min.js"></script>
-	<script src="<%= contextPath %>assets/js/ig_auth.js"></script>
-	<script src="<%= contextPath %>assets/js/pongstagr.am.js"></script>  
-	<script src="<%= contextPath %>assets/js/plugins.js"></script>   
-	<script src="<%= contextPath %>assets/js/application.js"></script>	
-
-	<%- defineContent('view_scripts') %> 	
 
 </html>

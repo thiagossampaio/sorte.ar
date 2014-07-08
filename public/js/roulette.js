@@ -2,10 +2,10 @@
 	var Roulette = function(options) {
 		var defaultSettings = {
 			maxPlayCount : null, // x >= 0 or null
-			speed : 10, // x > 0
+			speed : 400, // x > 0
 			stopImageNumber : null, // x >= 0 or null or -1
-			rollCount : 3, // x >= 0
-			duration : 3, //(x second)	
+			rollCount : 0, // x >= 0
+			duration : 0, //(x second)	
 			stopCallback : function() {
 			},
 			startCallback : function() {
@@ -128,16 +128,6 @@
 
 				p.runUpDistance = 2 * p.imageHeight;
 
-				//Não precisa verificar se a foto ainda não carregou
-				/*
-				p.$images.each(function(){
-					if (jQuery(this).find('img:first') != undefined && (jQuery(this).find('img:first').complete || jQuery(this).find('img').complete === undefined)){
-						var src = jQuery(this).find('img:first').attr('src');
-						// set BLANK image
-						jQuery(this).find('img:first').attr('src', 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==');
-					}  
-				});
-				*/
 			}
 			
 			//não precisa mais remover tudo

@@ -56,6 +56,12 @@
                 Feed
               </a>
             </li>
+            <li>
+              <a href="<%= contextPath %>buscar">
+                <i class="fa fa-search"></i>
+                Buscar
+              </a>
+            </li>
           </ul>
           <ul class="nav navbar-nav navbar-right"> 
             <li>
@@ -77,52 +83,53 @@
     
     <%- body %> 
 
-    <div class="section visible-lg visible-md">
-      <div id="license" class="page-header" style="margin-top: 0;">
-        <h1 class="text-primary">Licença</h1>
-        <small class="help-block text-muted">Copyright 2013 &copy;
-          Sorte.ar by Thiago Sampaio licensed under <a
-          href="http://opensource.org/licenses/MIT">MIT License</a>.
-        </small>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="text-muted text-justify">
-            <p>
-              <small> Permission is hereby granted, free of charge, to
-                any person obtaining a copy of this software and associated
-                documentation files (the "Software"), to deal in the Software
-                without restriction, including without limitation the rights to
-                use, copy, modify, merge, publish, distribute, sublicense,
-                and/or sell copies of the Software, and to permit persons to
-                whom the Software is furnished to do so, subject to the
-                following conditions: </small>
-            </p>
-
-            <p>
-              <small> The above copyright notice and this permission
-                notice shall be included in all copies or substantial portions
-                of the Software. </small>
-            </p>
-
-            <p>
-              <small> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT
-                WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-                LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-                PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-                AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
-                OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-                OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-                SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. </small>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>    
 
 	</div>
+
+  <script id="comentarios"  type="x-tmpl-mustache">
+    <div class="media item" data-full-name="{{from.full_name}}" data-username="{{from.username}}">
+          <a href="#" class="pull-left">
+            <img src="{{from.profile_picture}}" class="media-object" alt="64x64" style="width: 64px; height: 64px;">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">@{{from.username}}</h4>
+            {{text}}                     
+          </div>
+    </div>
+  </script>
+  <script id="fotoPrincipal"  type="x-tmpl-mustache">
+    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+      <div class="thumbnail text-center">
+        <a href="#">
+          <img class="" src="{{images.standard_resolution.url}}" width="100%" height="100%" style="opacity: 1;">
+        </a> 
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="row foto-principal-detail">
+        <div class="">
+          <dl>
+            <dt>Nome:</dt>
+            <dd id="sorteio_vencedor_nome" class="text-truncate">DESCONHECIDO</dd>
+            <dt>Usuário:</dt>
+            <dd id="sorteio_vencedor_usuario" class="text-truncate"></dd>
+            <dt>Data:</dt>
+            <dd id="sorteio_data"></dd>
+          </dl>
+        </div>  
+        <ul class="list-inline text-muted hidden-xs">
+            <li><i class="fa fa-heart"></i>&nbsp; {{likes.count}}</li>
+          <li><i class="fa fa-comment"></i>&nbsp; {{comments.count}}</li>
+        </ul>
+        <div class="hidden-xs text-muted">
+          <p>
+            {{caption.text}}
+          </p>
+        </div>  
+      </div>
+    </div>
+  </script>  
 	
 	<script src="<%= contextPath %>assets/js/jquery.min.js"></script>
 	<script src="<%= contextPath %>assets/js/bootstrap.min.js"></script>

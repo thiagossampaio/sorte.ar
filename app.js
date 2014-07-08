@@ -58,10 +58,10 @@ if (nconf.get('NODE_ENV') == 'production') {
 var redirect_uri = contextPath + 'instagram_redirect';
 
 /**
-  Parametros de configuração da api do instagram
+  Parametros de configuração da ig do instagram
 */
-var api = require('instagram-node').instagram();
-api.use({
+var ig = require('instagram-node').instagram();
+ig.use({
   client_id: client_id,
   client_secret: client_secret
 });
@@ -81,14 +81,14 @@ app.get('/', function(req, res){
   Implementando a rota de autorização do usuario instagram
 */
 app.get('/login', function(req, res) {
-  res.redirect(api.get_authorization_url(redirect_uri, { scope: ['likes'], state: 'a state' }));
+  res.redirect(ig.get_authorization_url(redirect_uri, { scope: ['likes'], state: 'a state' }));
 });
 
 /*
   Implementando a roda de redirecionamento do instagram
 */
 app.get('/instagram_redirect', function(req, res) {
-  api.authorize_user(req.query.code, redirect_uri, function(err, result) {
+  ig.authorize_user(req.query.code, redirect_uri, function(err, result) {
     if (err) {
       console.log(err);
       res.redirect('/');
@@ -148,6 +148,43 @@ app.get('/sortear/:usuario/media/:media', function(req, res){
   }else{
     res.redirect('/');
   }
+});
+
+app.get('/buscar', function(req, res){
+  if(usarioLogado){
+    res.render('buscar', { 
+        title: 'Sorte.ar | Faça aqui o seus sorteios do Instagram',
+        path: url.parse(req.url).path,
+        usarioLogado : usarioLogado,
+        contextPath: contextPath,
+        client_id: client_id,
+        client_secret: client_secret,
+        layout: 'layout_comun'
+    });
+  }else{
+    res.redirect('/');
+  }
+});
+
+app.post('/buscar', function(req, res){
+
+  if(usarioLogado){
+    
+    ig.user_search(req.body.username, {
+      count: 1
+    },function(err, users, limit) {
+      console.log(err, users, limit);
+      if(err){
+        res.send(err);
+      }else{
+        res.send(users);
+      }
+    });
+
+  }else{
+    res.send({err: 'Usuario não logado'});
+  }
+
 });
 
 

@@ -182,40 +182,6 @@
             modal += '  </div>'
             modal += '</div>'
         
-            	/*
-        $('#triggr-' + options.data.id).on('click', function(e) {
-          e.preventDefault()
-
-          $('body').append(modal)
-          $('#' + options.data.id)
-            .modal('show')
-            .on('shown.bs.modal',  function() {
-              var video = document.getElementById(options.data.id +'-video')
-
-              Pongstgrm.prototype.preloadMedia({
-                  imgid : '#' + options.data.id +'-full'
-                , loadr : '#' + options.data.id +'-full-loadr'
-              })
-
-              Pongstgrm.prototype.videoBtn({
-                  trigger: '#play-pause'
-                , child:   'i'
-                , classes: 'glyphicon-play glyphicon-pause'
-              }, function () { video.paused === true ? video.play() : video.pause() })
-
-              Pongstgrm.prototype.videoBtn({
-                  trigger: '#mute'
-                , child:   'i'
-                , classes: 'glyphicon-volume-up glyphicon-volume-off'
-              }, function() { video.muted === false ?  video.muted = true :  video.muted = false })
-
-            })
-            .on('hidden.bs.modal', function() {
-              $(this).remove()
-            })
-        })
-        */
-
       return
     }
   }
