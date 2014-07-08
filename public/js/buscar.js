@@ -1,9 +1,14 @@
+var buscarContainer = jQuery('#buscar-container').html();
+
 jQuery(document).ready(function(){
 	jQuery('#buscar').on('click',function(){
 		jQuery.post('/buscar', {username: jQuery("#buscar-query").val()}, function(data){
 			if(data){
-				console.log(data);
-				jQuery('#instagram-buscar').removeClass('hide');
+				
+				Mustache.parse(buscarContainer);
+				var renderedBuscarContainer = Mustache.render(buscarContainer, {});
+				jQuery('#instagram-container').html(renderedBuscarContainer);  
+
 				jQuery('#instagram-buscar').pongstgrm({
 				    accessId: jQuery('#dados').data('client-id'),
 				    accessToken: jQuery('#dados').data('usuario-logado').access_token,
