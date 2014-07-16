@@ -173,16 +173,18 @@ app.post('/buscar', function(req, res){
     ig.user_search(req.body.username, {
       count: 1
     },function(err, users, limit) {
-      console.log(err, users, limit);
-      if(err){
-        res.send(err);
+      console.log(err, users, limit, users.length);
+      if(err != null){
+        res.send(500, err);
+      }else if (users.length == undefined || users.length <= 0){
+        res.send(404, 'Usuário não encontrado');
       }else{
         res.send(users);
       }
     });
 
   }else{
-    res.send({err: 'Usuario não logado'});
+    res.send(500, 'Usuario não logado');
   }
 
 });

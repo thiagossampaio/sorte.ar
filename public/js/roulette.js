@@ -57,7 +57,8 @@
 			p.slowDownCallback();
 			p.isSlowdown = true;
 			p.slowDownStartDistance = p.distance;
-			p.maxDistance = p.distance + (2*p.totalHeight);
+			//p.maxDistance = p.distance + (2*p.totalHeight);
+			p.maxDistance = p.distance + p.totalHeight;
 			p.maxDistance += p.imageHeight - p.topPosition % p.imageHeight;
 			if (p.stopImageNumber != null) {
 				p.maxDistance += (p.totalHeight - (p.maxDistance % p.totalHeight) + (p.stopImageNumber * p.imageHeight))
@@ -82,12 +83,16 @@
 				speed_ = rate_ + 1;
 			}
 
+			//speed_ = speed_ * 5;
+
 			if (p.maxDistance && p.distance >= p.maxDistance) {
 				p.isStop = true;
 				reset();
 				p.stopCallback(p.$rouletteTarget.find('.item').eq(p.stopImageNumber));
+				console.log('entrou para parar.');
 				return;
 			}
+
 			p.distance += speed_;
 			p.topPosition += speed_;
 			if (p.topPosition >= p.totalHeight) {
@@ -120,12 +125,6 @@
 				//$roulette.css({ 'height' : (p.imageHeight + 'px') });
 				$roulette.css({ 'height' : ('100px') });
 				p.totalHeight = p.imageCount * p.imageHeight;
-
-				console.log('p.totalHeight: ',p.totalHeight);
-				console.log('p.imageCount: ',p.imageCount);
-				console.log('p.imageHeight: ',p.imageHeight);
-				console.log('p.$images: ',p.$images[0]);
-
 				p.runUpDistance = 2 * p.imageHeight;
 
 			}
