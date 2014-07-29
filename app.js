@@ -1,3 +1,4 @@
+require('newrelic');
 var express = require('express'), engine = require('ejs-locals');
 var path = require('path');
 var favicon = require('static-favicon');
